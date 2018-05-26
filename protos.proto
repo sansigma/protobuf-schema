@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+message Depth {
+  string exchange = 1;
+  string base = 2;
+  string quote = 3;
+  message BidAsk {
+    double price = 1;
+    double amount = 2;
+  }
+  repeated BidAsk bids = 4;
+  repeated BidAsk asks = 5;
+  int64 timestamp = 6;
+}
