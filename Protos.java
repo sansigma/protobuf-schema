@@ -12,8 +12,528 @@ public final class Protos {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface DepthOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:Depth)
+  public interface BidAskSchemaOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:BidAskSchema)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>double price = 1;</code>
+     */
+    double getPrice();
+
+    /**
+     * <code>double amount = 2;</code>
+     */
+    double getAmount();
+  }
+  /**
+   * Protobuf type {@code BidAskSchema}
+   */
+  public  static final class BidAskSchema extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:BidAskSchema)
+      BidAskSchemaOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use BidAskSchema.newBuilder() to construct.
+    private BidAskSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private BidAskSchema() {
+      price_ = 0D;
+      amount_ = 0D;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BidAskSchema(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 9: {
+
+              price_ = input.readDouble();
+              break;
+            }
+            case 17: {
+
+              amount_ = input.readDouble();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return Protos.internal_static_BidAskSchema_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Protos.internal_static_BidAskSchema_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Protos.BidAskSchema.class, Protos.BidAskSchema.Builder.class);
+    }
+
+    public static final int PRICE_FIELD_NUMBER = 1;
+    private double price_;
+    /**
+     * <code>double price = 1;</code>
+     */
+    public double getPrice() {
+      return price_;
+    }
+
+    public static final int AMOUNT_FIELD_NUMBER = 2;
+    private double amount_;
+    /**
+     * <code>double amount = 2;</code>
+     */
+    public double getAmount() {
+      return amount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (price_ != 0D) {
+        output.writeDouble(1, price_);
+      }
+      if (amount_ != 0D) {
+        output.writeDouble(2, amount_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (price_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(1, price_);
+      }
+      if (amount_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, amount_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof Protos.BidAskSchema)) {
+        return super.equals(obj);
+      }
+      Protos.BidAskSchema other = (Protos.BidAskSchema) obj;
+
+      boolean result = true;
+      result = result && (
+          java.lang.Double.doubleToLongBits(getPrice())
+          == java.lang.Double.doubleToLongBits(
+              other.getPrice()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getAmount())
+          == java.lang.Double.doubleToLongBits(
+              other.getAmount()));
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PRICE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getPrice()));
+      hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getAmount()));
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static Protos.BidAskSchema parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Protos.BidAskSchema parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Protos.BidAskSchema parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Protos.BidAskSchema parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Protos.BidAskSchema parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Protos.BidAskSchema parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Protos.BidAskSchema parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Protos.BidAskSchema parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Protos.BidAskSchema parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static Protos.BidAskSchema parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Protos.BidAskSchema parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Protos.BidAskSchema parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(Protos.BidAskSchema prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code BidAskSchema}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:BidAskSchema)
+        Protos.BidAskSchemaOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Protos.internal_static_BidAskSchema_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Protos.internal_static_BidAskSchema_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Protos.BidAskSchema.class, Protos.BidAskSchema.Builder.class);
+      }
+
+      // Construct using Protos.BidAskSchema.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        price_ = 0D;
+
+        amount_ = 0D;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return Protos.internal_static_BidAskSchema_descriptor;
+      }
+
+      public Protos.BidAskSchema getDefaultInstanceForType() {
+        return Protos.BidAskSchema.getDefaultInstance();
+      }
+
+      public Protos.BidAskSchema build() {
+        Protos.BidAskSchema result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public Protos.BidAskSchema buildPartial() {
+        Protos.BidAskSchema result = new Protos.BidAskSchema(this);
+        result.price_ = price_;
+        result.amount_ = amount_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Protos.BidAskSchema) {
+          return mergeFrom((Protos.BidAskSchema)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Protos.BidAskSchema other) {
+        if (other == Protos.BidAskSchema.getDefaultInstance()) return this;
+        if (other.getPrice() != 0D) {
+          setPrice(other.getPrice());
+        }
+        if (other.getAmount() != 0D) {
+          setAmount(other.getAmount());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Protos.BidAskSchema parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (Protos.BidAskSchema) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private double price_ ;
+      /**
+       * <code>double price = 1;</code>
+       */
+      public double getPrice() {
+        return price_;
+      }
+      /**
+       * <code>double price = 1;</code>
+       */
+      public Builder setPrice(double value) {
+        
+        price_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double price = 1;</code>
+       */
+      public Builder clearPrice() {
+        
+        price_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double amount_ ;
+      /**
+       * <code>double amount = 2;</code>
+       */
+      public double getAmount() {
+        return amount_;
+      }
+      /**
+       * <code>double amount = 2;</code>
+       */
+      public Builder setAmount(double value) {
+        
+        amount_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double amount = 2;</code>
+       */
+      public Builder clearAmount() {
+        
+        amount_ = 0D;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:BidAskSchema)
+    }
+
+    // @@protoc_insertion_point(class_scope:BidAskSchema)
+    private static final Protos.BidAskSchema DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Protos.BidAskSchema();
+    }
+
+    public static Protos.BidAskSchema getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<BidAskSchema>
+        PARSER = new com.google.protobuf.AbstractParser<BidAskSchema>() {
+      public BidAskSchema parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BidAskSchema(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<BidAskSchema> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BidAskSchema> getParserForType() {
+      return PARSER;
+    }
+
+    public Protos.BidAskSchema getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DepthSchemaOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:DepthSchema)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -47,77 +567,88 @@ public final class Protos {
         getQuoteBytes();
 
     /**
-     * <code>repeated .Depth.BidAsk bids = 4;</code>
+     * <code>repeated .BidAskSchema bids = 4;</code>
      */
-    java.util.List<Protos.Depth.BidAsk> 
+    java.util.List<Protos.BidAskSchema> 
         getBidsList();
     /**
-     * <code>repeated .Depth.BidAsk bids = 4;</code>
+     * <code>repeated .BidAskSchema bids = 4;</code>
      */
-    Protos.Depth.BidAsk getBids(int index);
+    Protos.BidAskSchema getBids(int index);
     /**
-     * <code>repeated .Depth.BidAsk bids = 4;</code>
+     * <code>repeated .BidAskSchema bids = 4;</code>
      */
     int getBidsCount();
     /**
-     * <code>repeated .Depth.BidAsk bids = 4;</code>
+     * <code>repeated .BidAskSchema bids = 4;</code>
      */
-    java.util.List<? extends Protos.Depth.BidAskOrBuilder> 
+    java.util.List<? extends Protos.BidAskSchemaOrBuilder> 
         getBidsOrBuilderList();
     /**
-     * <code>repeated .Depth.BidAsk bids = 4;</code>
+     * <code>repeated .BidAskSchema bids = 4;</code>
      */
-    Protos.Depth.BidAskOrBuilder getBidsOrBuilder(
+    Protos.BidAskSchemaOrBuilder getBidsOrBuilder(
         int index);
 
     /**
-     * <code>repeated .Depth.BidAsk asks = 5;</code>
+     * <code>repeated .BidAskSchema asks = 5;</code>
      */
-    java.util.List<Protos.Depth.BidAsk> 
+    java.util.List<Protos.BidAskSchema> 
         getAsksList();
     /**
-     * <code>repeated .Depth.BidAsk asks = 5;</code>
+     * <code>repeated .BidAskSchema asks = 5;</code>
      */
-    Protos.Depth.BidAsk getAsks(int index);
+    Protos.BidAskSchema getAsks(int index);
     /**
-     * <code>repeated .Depth.BidAsk asks = 5;</code>
+     * <code>repeated .BidAskSchema asks = 5;</code>
      */
     int getAsksCount();
     /**
-     * <code>repeated .Depth.BidAsk asks = 5;</code>
+     * <code>repeated .BidAskSchema asks = 5;</code>
      */
-    java.util.List<? extends Protos.Depth.BidAskOrBuilder> 
+    java.util.List<? extends Protos.BidAskSchemaOrBuilder> 
         getAsksOrBuilderList();
     /**
-     * <code>repeated .Depth.BidAsk asks = 5;</code>
+     * <code>repeated .BidAskSchema asks = 5;</code>
      */
-    Protos.Depth.BidAskOrBuilder getAsksOrBuilder(
+    Protos.BidAskSchemaOrBuilder getAsksOrBuilder(
         int index);
 
     /**
      * <code>int64 timestamp = 6;</code>
      */
     long getTimestamp();
+
+    /**
+     * <code>string key = 7;</code>
+     */
+    java.lang.String getKey();
+    /**
+     * <code>string key = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getKeyBytes();
   }
   /**
-   * Protobuf type {@code Depth}
+   * Protobuf type {@code DepthSchema}
    */
-  public  static final class Depth extends
+  public  static final class DepthSchema extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:Depth)
-      DepthOrBuilder {
+      // @@protoc_insertion_point(message_implements:DepthSchema)
+      DepthSchemaOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use Depth.newBuilder() to construct.
-    private Depth(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use DepthSchema.newBuilder() to construct.
+    private DepthSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Depth() {
+    private DepthSchema() {
       exchange_ = "";
       base_ = "";
       quote_ = "";
       bids_ = java.util.Collections.emptyList();
       asks_ = java.util.Collections.emptyList();
       timestamp_ = 0L;
+      key_ = "";
     }
 
     @java.lang.Override
@@ -125,7 +656,7 @@ public final class Protos {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Depth(
+    private DepthSchema(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -171,25 +702,31 @@ public final class Protos {
             }
             case 34: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                bids_ = new java.util.ArrayList<Protos.Depth.BidAsk>();
+                bids_ = new java.util.ArrayList<Protos.BidAskSchema>();
                 mutable_bitField0_ |= 0x00000008;
               }
               bids_.add(
-                  input.readMessage(Protos.Depth.BidAsk.parser(), extensionRegistry));
+                  input.readMessage(Protos.BidAskSchema.parser(), extensionRegistry));
               break;
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                asks_ = new java.util.ArrayList<Protos.Depth.BidAsk>();
+                asks_ = new java.util.ArrayList<Protos.BidAskSchema>();
                 mutable_bitField0_ |= 0x00000010;
               }
               asks_.add(
-                  input.readMessage(Protos.Depth.BidAsk.parser(), extensionRegistry));
+                  input.readMessage(Protos.BidAskSchema.parser(), extensionRegistry));
               break;
             }
             case 48: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              key_ = s;
               break;
             }
           }
@@ -212,534 +749,14 @@ public final class Protos {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return Protos.internal_static_Depth_descriptor;
+      return Protos.internal_static_DepthSchema_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return Protos.internal_static_Depth_fieldAccessorTable
+      return Protos.internal_static_DepthSchema_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Protos.Depth.class, Protos.Depth.Builder.class);
-    }
-
-    public interface BidAskOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:Depth.BidAsk)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>double price = 1;</code>
-       */
-      double getPrice();
-
-      /**
-       * <code>double amount = 2;</code>
-       */
-      double getAmount();
-    }
-    /**
-     * Protobuf type {@code Depth.BidAsk}
-     */
-    public  static final class BidAsk extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:Depth.BidAsk)
-        BidAskOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use BidAsk.newBuilder() to construct.
-      private BidAsk(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private BidAsk() {
-        price_ = 0D;
-        amount_ = 0D;
-      }
-
-      @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private BidAsk(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-              case 9: {
-
-                price_ = input.readDouble();
-                break;
-              }
-              case 17: {
-
-                amount_ = input.readDouble();
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return Protos.internal_static_Depth_BidAsk_descriptor;
-      }
-
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return Protos.internal_static_Depth_BidAsk_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                Protos.Depth.BidAsk.class, Protos.Depth.BidAsk.Builder.class);
-      }
-
-      public static final int PRICE_FIELD_NUMBER = 1;
-      private double price_;
-      /**
-       * <code>double price = 1;</code>
-       */
-      public double getPrice() {
-        return price_;
-      }
-
-      public static final int AMOUNT_FIELD_NUMBER = 2;
-      private double amount_;
-      /**
-       * <code>double amount = 2;</code>
-       */
-      public double getAmount() {
-        return amount_;
-      }
-
-      private byte memoizedIsInitialized = -1;
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (price_ != 0D) {
-          output.writeDouble(1, price_);
-        }
-        if (amount_ != 0D) {
-          output.writeDouble(2, amount_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (price_ != 0D) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(1, price_);
-        }
-        if (amount_ != 0D) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeDoubleSize(2, amount_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @java.lang.Override
-      public boolean equals(final java.lang.Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof Protos.Depth.BidAsk)) {
-          return super.equals(obj);
-        }
-        Protos.Depth.BidAsk other = (Protos.Depth.BidAsk) obj;
-
-        boolean result = true;
-        result = result && (
-            java.lang.Double.doubleToLongBits(getPrice())
-            == java.lang.Double.doubleToLongBits(
-                other.getPrice()));
-        result = result && (
-            java.lang.Double.doubleToLongBits(getAmount())
-            == java.lang.Double.doubleToLongBits(
-                other.getAmount()));
-        result = result && unknownFields.equals(other.unknownFields);
-        return result;
-      }
-
-      @java.lang.Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + PRICE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getPrice()));
-        hash = (37 * hash) + AMOUNT_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            java.lang.Double.doubleToLongBits(getAmount()));
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static Protos.Depth.BidAsk parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static Protos.Depth.BidAsk parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static Protos.Depth.BidAsk parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static Protos.Depth.BidAsk parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static Protos.Depth.BidAsk parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static Protos.Depth.BidAsk parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static Protos.Depth.BidAsk parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static Protos.Depth.BidAsk parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static Protos.Depth.BidAsk parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static Protos.Depth.BidAsk parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static Protos.Depth.BidAsk parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static Protos.Depth.BidAsk parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(Protos.Depth.BidAsk prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @java.lang.Override
-      protected Builder newBuilderForType(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * Protobuf type {@code Depth.BidAsk}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:Depth.BidAsk)
-          Protos.Depth.BidAskOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return Protos.internal_static_Depth_BidAsk_descriptor;
-        }
-
-        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return Protos.internal_static_Depth_BidAsk_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  Protos.Depth.BidAsk.class, Protos.Depth.BidAsk.Builder.class);
-        }
-
-        // Construct using Protos.Depth.BidAsk.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        public Builder clear() {
-          super.clear();
-          price_ = 0D;
-
-          amount_ = 0D;
-
-          return this;
-        }
-
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return Protos.internal_static_Depth_BidAsk_descriptor;
-        }
-
-        public Protos.Depth.BidAsk getDefaultInstanceForType() {
-          return Protos.Depth.BidAsk.getDefaultInstance();
-        }
-
-        public Protos.Depth.BidAsk build() {
-          Protos.Depth.BidAsk result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        public Protos.Depth.BidAsk buildPartial() {
-          Protos.Depth.BidAsk result = new Protos.Depth.BidAsk(this);
-          result.price_ = price_;
-          result.amount_ = amount_;
-          onBuilt();
-          return result;
-        }
-
-        public Builder clone() {
-          return (Builder) super.clone();
-        }
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.setField(field, value);
-        }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return (Builder) super.clearField(field);
-        }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return (Builder) super.clearOneof(oneof);
-        }
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
-          return (Builder) super.setRepeatedField(field, index, value);
-        }
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
-          return (Builder) super.addRepeatedField(field, value);
-        }
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof Protos.Depth.BidAsk) {
-            return mergeFrom((Protos.Depth.BidAsk)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(Protos.Depth.BidAsk other) {
-          if (other == Protos.Depth.BidAsk.getDefaultInstance()) return this;
-          if (other.getPrice() != 0D) {
-            setPrice(other.getPrice());
-          }
-          if (other.getAmount() != 0D) {
-            setAmount(other.getAmount());
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          Protos.Depth.BidAsk parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (Protos.Depth.BidAsk) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private double price_ ;
-        /**
-         * <code>double price = 1;</code>
-         */
-        public double getPrice() {
-          return price_;
-        }
-        /**
-         * <code>double price = 1;</code>
-         */
-        public Builder setPrice(double value) {
-          
-          price_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>double price = 1;</code>
-         */
-        public Builder clearPrice() {
-          
-          price_ = 0D;
-          onChanged();
-          return this;
-        }
-
-        private double amount_ ;
-        /**
-         * <code>double amount = 2;</code>
-         */
-        public double getAmount() {
-          return amount_;
-        }
-        /**
-         * <code>double amount = 2;</code>
-         */
-        public Builder setAmount(double value) {
-          
-          amount_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>double amount = 2;</code>
-         */
-        public Builder clearAmount() {
-          
-          amount_ = 0D;
-          onChanged();
-          return this;
-        }
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
-        }
-
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:Depth.BidAsk)
-      }
-
-      // @@protoc_insertion_point(class_scope:Depth.BidAsk)
-      private static final Protos.Depth.BidAsk DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new Protos.Depth.BidAsk();
-      }
-
-      public static Protos.Depth.BidAsk getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<BidAsk>
-          PARSER = new com.google.protobuf.AbstractParser<BidAsk>() {
-        public BidAsk parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new BidAsk(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<BidAsk> parser() {
-        return PARSER;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Parser<BidAsk> getParserForType() {
-        return PARSER;
-      }
-
-      public Protos.Depth.BidAsk getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
+              Protos.DepthSchema.class, Protos.DepthSchema.Builder.class);
     }
 
     private int bitField0_;
@@ -846,71 +863,71 @@ public final class Protos {
     }
 
     public static final int BIDS_FIELD_NUMBER = 4;
-    private java.util.List<Protos.Depth.BidAsk> bids_;
+    private java.util.List<Protos.BidAskSchema> bids_;
     /**
-     * <code>repeated .Depth.BidAsk bids = 4;</code>
+     * <code>repeated .BidAskSchema bids = 4;</code>
      */
-    public java.util.List<Protos.Depth.BidAsk> getBidsList() {
+    public java.util.List<Protos.BidAskSchema> getBidsList() {
       return bids_;
     }
     /**
-     * <code>repeated .Depth.BidAsk bids = 4;</code>
+     * <code>repeated .BidAskSchema bids = 4;</code>
      */
-    public java.util.List<? extends Protos.Depth.BidAskOrBuilder> 
+    public java.util.List<? extends Protos.BidAskSchemaOrBuilder> 
         getBidsOrBuilderList() {
       return bids_;
     }
     /**
-     * <code>repeated .Depth.BidAsk bids = 4;</code>
+     * <code>repeated .BidAskSchema bids = 4;</code>
      */
     public int getBidsCount() {
       return bids_.size();
     }
     /**
-     * <code>repeated .Depth.BidAsk bids = 4;</code>
+     * <code>repeated .BidAskSchema bids = 4;</code>
      */
-    public Protos.Depth.BidAsk getBids(int index) {
+    public Protos.BidAskSchema getBids(int index) {
       return bids_.get(index);
     }
     /**
-     * <code>repeated .Depth.BidAsk bids = 4;</code>
+     * <code>repeated .BidAskSchema bids = 4;</code>
      */
-    public Protos.Depth.BidAskOrBuilder getBidsOrBuilder(
+    public Protos.BidAskSchemaOrBuilder getBidsOrBuilder(
         int index) {
       return bids_.get(index);
     }
 
     public static final int ASKS_FIELD_NUMBER = 5;
-    private java.util.List<Protos.Depth.BidAsk> asks_;
+    private java.util.List<Protos.BidAskSchema> asks_;
     /**
-     * <code>repeated .Depth.BidAsk asks = 5;</code>
+     * <code>repeated .BidAskSchema asks = 5;</code>
      */
-    public java.util.List<Protos.Depth.BidAsk> getAsksList() {
+    public java.util.List<Protos.BidAskSchema> getAsksList() {
       return asks_;
     }
     /**
-     * <code>repeated .Depth.BidAsk asks = 5;</code>
+     * <code>repeated .BidAskSchema asks = 5;</code>
      */
-    public java.util.List<? extends Protos.Depth.BidAskOrBuilder> 
+    public java.util.List<? extends Protos.BidAskSchemaOrBuilder> 
         getAsksOrBuilderList() {
       return asks_;
     }
     /**
-     * <code>repeated .Depth.BidAsk asks = 5;</code>
+     * <code>repeated .BidAskSchema asks = 5;</code>
      */
     public int getAsksCount() {
       return asks_.size();
     }
     /**
-     * <code>repeated .Depth.BidAsk asks = 5;</code>
+     * <code>repeated .BidAskSchema asks = 5;</code>
      */
-    public Protos.Depth.BidAsk getAsks(int index) {
+    public Protos.BidAskSchema getAsks(int index) {
       return asks_.get(index);
     }
     /**
-     * <code>repeated .Depth.BidAsk asks = 5;</code>
+     * <code>repeated .BidAskSchema asks = 5;</code>
      */
-    public Protos.Depth.BidAskOrBuilder getAsksOrBuilder(
+    public Protos.BidAskSchemaOrBuilder getAsksOrBuilder(
         int index) {
       return asks_.get(index);
     }
@@ -922,6 +939,40 @@ public final class Protos {
      */
     public long getTimestamp() {
       return timestamp_;
+    }
+
+    public static final int KEY_FIELD_NUMBER = 7;
+    private volatile java.lang.Object key_;
+    /**
+     * <code>string key = 7;</code>
+     */
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string key = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -954,6 +1005,9 @@ public final class Protos {
       if (timestamp_ != 0L) {
         output.writeInt64(6, timestamp_);
       }
+      if (!getKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, key_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -983,6 +1037,9 @@ public final class Protos {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(6, timestamp_);
       }
+      if (!getKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, key_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -993,10 +1050,10 @@ public final class Protos {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof Protos.Depth)) {
+      if (!(obj instanceof Protos.DepthSchema)) {
         return super.equals(obj);
       }
-      Protos.Depth other = (Protos.Depth) obj;
+      Protos.DepthSchema other = (Protos.DepthSchema) obj;
 
       boolean result = true;
       result = result && getExchange()
@@ -1011,6 +1068,8 @@ public final class Protos {
           .equals(other.getAsksList());
       result = result && (getTimestamp()
           == other.getTimestamp());
+      result = result && getKey()
+          .equals(other.getKey());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -1039,74 +1098,76 @@ public final class Protos {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static Protos.Depth parseFrom(
+    public static Protos.DepthSchema parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Protos.Depth parseFrom(
+    public static Protos.DepthSchema parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Protos.Depth parseFrom(
+    public static Protos.DepthSchema parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Protos.Depth parseFrom(
+    public static Protos.DepthSchema parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Protos.Depth parseFrom(byte[] data)
+    public static Protos.DepthSchema parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Protos.Depth parseFrom(
+    public static Protos.DepthSchema parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Protos.Depth parseFrom(java.io.InputStream input)
+    public static Protos.DepthSchema parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Protos.Depth parseFrom(
+    public static Protos.DepthSchema parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Protos.Depth parseDelimitedFrom(java.io.InputStream input)
+    public static Protos.DepthSchema parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static Protos.Depth parseDelimitedFrom(
+    public static Protos.DepthSchema parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Protos.Depth parseFrom(
+    public static Protos.DepthSchema parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static Protos.Depth parseFrom(
+    public static Protos.DepthSchema parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1118,7 +1179,7 @@ public final class Protos {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(Protos.Depth prototype) {
+    public static Builder newBuilder(Protos.DepthSchema prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1133,25 +1194,25 @@ public final class Protos {
       return builder;
     }
     /**
-     * Protobuf type {@code Depth}
+     * Protobuf type {@code DepthSchema}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:Depth)
-        Protos.DepthOrBuilder {
+        // @@protoc_insertion_point(builder_implements:DepthSchema)
+        Protos.DepthSchemaOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return Protos.internal_static_Depth_descriptor;
+        return Protos.internal_static_DepthSchema_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return Protos.internal_static_Depth_fieldAccessorTable
+        return Protos.internal_static_DepthSchema_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Protos.Depth.class, Protos.Depth.Builder.class);
+                Protos.DepthSchema.class, Protos.DepthSchema.Builder.class);
       }
 
-      // Construct using Protos.Depth.newBuilder()
+      // Construct using Protos.DepthSchema.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -1190,28 +1251,30 @@ public final class Protos {
         }
         timestamp_ = 0L;
 
+        key_ = "";
+
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return Protos.internal_static_Depth_descriptor;
+        return Protos.internal_static_DepthSchema_descriptor;
       }
 
-      public Protos.Depth getDefaultInstanceForType() {
-        return Protos.Depth.getDefaultInstance();
+      public Protos.DepthSchema getDefaultInstanceForType() {
+        return Protos.DepthSchema.getDefaultInstance();
       }
 
-      public Protos.Depth build() {
-        Protos.Depth result = buildPartial();
+      public Protos.DepthSchema build() {
+        Protos.DepthSchema result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public Protos.Depth buildPartial() {
-        Protos.Depth result = new Protos.Depth(this);
+      public Protos.DepthSchema buildPartial() {
+        Protos.DepthSchema result = new Protos.DepthSchema(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.exchange_ = exchange_;
@@ -1236,6 +1299,7 @@ public final class Protos {
           result.asks_ = asksBuilder_.build();
         }
         result.timestamp_ = timestamp_;
+        result.key_ = key_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1268,16 +1332,16 @@ public final class Protos {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Protos.Depth) {
-          return mergeFrom((Protos.Depth)other);
+        if (other instanceof Protos.DepthSchema) {
+          return mergeFrom((Protos.DepthSchema)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Protos.Depth other) {
-        if (other == Protos.Depth.getDefaultInstance()) return this;
+      public Builder mergeFrom(Protos.DepthSchema other) {
+        if (other == Protos.DepthSchema.getDefaultInstance()) return this;
         if (!other.getExchange().isEmpty()) {
           exchange_ = other.exchange_;
           onChanged();
@@ -1345,6 +1409,10 @@ public final class Protos {
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
         }
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -1358,11 +1426,11 @@ public final class Protos {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Protos.Depth parsedMessage = null;
+        Protos.DepthSchema parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Protos.Depth) e.getUnfinishedMessage();
+          parsedMessage = (Protos.DepthSchema) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1580,22 +1648,22 @@ public final class Protos {
         return this;
       }
 
-      private java.util.List<Protos.Depth.BidAsk> bids_ =
+      private java.util.List<Protos.BidAskSchema> bids_ =
         java.util.Collections.emptyList();
       private void ensureBidsIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          bids_ = new java.util.ArrayList<Protos.Depth.BidAsk>(bids_);
+          bids_ = new java.util.ArrayList<Protos.BidAskSchema>(bids_);
           bitField0_ |= 0x00000008;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          Protos.Depth.BidAsk, Protos.Depth.BidAsk.Builder, Protos.Depth.BidAskOrBuilder> bidsBuilder_;
+          Protos.BidAskSchema, Protos.BidAskSchema.Builder, Protos.BidAskSchemaOrBuilder> bidsBuilder_;
 
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
-      public java.util.List<Protos.Depth.BidAsk> getBidsList() {
+      public java.util.List<Protos.BidAskSchema> getBidsList() {
         if (bidsBuilder_ == null) {
           return java.util.Collections.unmodifiableList(bids_);
         } else {
@@ -1603,7 +1671,7 @@ public final class Protos {
         }
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
       public int getBidsCount() {
         if (bidsBuilder_ == null) {
@@ -1613,9 +1681,9 @@ public final class Protos {
         }
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
-      public Protos.Depth.BidAsk getBids(int index) {
+      public Protos.BidAskSchema getBids(int index) {
         if (bidsBuilder_ == null) {
           return bids_.get(index);
         } else {
@@ -1623,10 +1691,10 @@ public final class Protos {
         }
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
       public Builder setBids(
-          int index, Protos.Depth.BidAsk value) {
+          int index, Protos.BidAskSchema value) {
         if (bidsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1640,10 +1708,10 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
       public Builder setBids(
-          int index, Protos.Depth.BidAsk.Builder builderForValue) {
+          int index, Protos.BidAskSchema.Builder builderForValue) {
         if (bidsBuilder_ == null) {
           ensureBidsIsMutable();
           bids_.set(index, builderForValue.build());
@@ -1654,9 +1722,9 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
-      public Builder addBids(Protos.Depth.BidAsk value) {
+      public Builder addBids(Protos.BidAskSchema value) {
         if (bidsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1670,10 +1738,10 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
       public Builder addBids(
-          int index, Protos.Depth.BidAsk value) {
+          int index, Protos.BidAskSchema value) {
         if (bidsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1687,10 +1755,10 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
       public Builder addBids(
-          Protos.Depth.BidAsk.Builder builderForValue) {
+          Protos.BidAskSchema.Builder builderForValue) {
         if (bidsBuilder_ == null) {
           ensureBidsIsMutable();
           bids_.add(builderForValue.build());
@@ -1701,10 +1769,10 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
       public Builder addBids(
-          int index, Protos.Depth.BidAsk.Builder builderForValue) {
+          int index, Protos.BidAskSchema.Builder builderForValue) {
         if (bidsBuilder_ == null) {
           ensureBidsIsMutable();
           bids_.add(index, builderForValue.build());
@@ -1715,10 +1783,10 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
       public Builder addAllBids(
-          java.lang.Iterable<? extends Protos.Depth.BidAsk> values) {
+          java.lang.Iterable<? extends Protos.BidAskSchema> values) {
         if (bidsBuilder_ == null) {
           ensureBidsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1730,7 +1798,7 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
       public Builder clearBids() {
         if (bidsBuilder_ == null) {
@@ -1743,7 +1811,7 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
       public Builder removeBids(int index) {
         if (bidsBuilder_ == null) {
@@ -1756,16 +1824,16 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
-      public Protos.Depth.BidAsk.Builder getBidsBuilder(
+      public Protos.BidAskSchema.Builder getBidsBuilder(
           int index) {
         return getBidsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
-      public Protos.Depth.BidAskOrBuilder getBidsOrBuilder(
+      public Protos.BidAskSchemaOrBuilder getBidsOrBuilder(
           int index) {
         if (bidsBuilder_ == null) {
           return bids_.get(index);  } else {
@@ -1773,9 +1841,9 @@ public final class Protos {
         }
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
-      public java.util.List<? extends Protos.Depth.BidAskOrBuilder> 
+      public java.util.List<? extends Protos.BidAskSchemaOrBuilder> 
            getBidsOrBuilderList() {
         if (bidsBuilder_ != null) {
           return bidsBuilder_.getMessageOrBuilderList();
@@ -1784,33 +1852,33 @@ public final class Protos {
         }
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
-      public Protos.Depth.BidAsk.Builder addBidsBuilder() {
+      public Protos.BidAskSchema.Builder addBidsBuilder() {
         return getBidsFieldBuilder().addBuilder(
-            Protos.Depth.BidAsk.getDefaultInstance());
+            Protos.BidAskSchema.getDefaultInstance());
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
-      public Protos.Depth.BidAsk.Builder addBidsBuilder(
+      public Protos.BidAskSchema.Builder addBidsBuilder(
           int index) {
         return getBidsFieldBuilder().addBuilder(
-            index, Protos.Depth.BidAsk.getDefaultInstance());
+            index, Protos.BidAskSchema.getDefaultInstance());
       }
       /**
-       * <code>repeated .Depth.BidAsk bids = 4;</code>
+       * <code>repeated .BidAskSchema bids = 4;</code>
        */
-      public java.util.List<Protos.Depth.BidAsk.Builder> 
+      public java.util.List<Protos.BidAskSchema.Builder> 
            getBidsBuilderList() {
         return getBidsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          Protos.Depth.BidAsk, Protos.Depth.BidAsk.Builder, Protos.Depth.BidAskOrBuilder> 
+          Protos.BidAskSchema, Protos.BidAskSchema.Builder, Protos.BidAskSchemaOrBuilder> 
           getBidsFieldBuilder() {
         if (bidsBuilder_ == null) {
           bidsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              Protos.Depth.BidAsk, Protos.Depth.BidAsk.Builder, Protos.Depth.BidAskOrBuilder>(
+              Protos.BidAskSchema, Protos.BidAskSchema.Builder, Protos.BidAskSchemaOrBuilder>(
                   bids_,
                   ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
@@ -1820,22 +1888,22 @@ public final class Protos {
         return bidsBuilder_;
       }
 
-      private java.util.List<Protos.Depth.BidAsk> asks_ =
+      private java.util.List<Protos.BidAskSchema> asks_ =
         java.util.Collections.emptyList();
       private void ensureAsksIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          asks_ = new java.util.ArrayList<Protos.Depth.BidAsk>(asks_);
+          asks_ = new java.util.ArrayList<Protos.BidAskSchema>(asks_);
           bitField0_ |= 0x00000010;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          Protos.Depth.BidAsk, Protos.Depth.BidAsk.Builder, Protos.Depth.BidAskOrBuilder> asksBuilder_;
+          Protos.BidAskSchema, Protos.BidAskSchema.Builder, Protos.BidAskSchemaOrBuilder> asksBuilder_;
 
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
-      public java.util.List<Protos.Depth.BidAsk> getAsksList() {
+      public java.util.List<Protos.BidAskSchema> getAsksList() {
         if (asksBuilder_ == null) {
           return java.util.Collections.unmodifiableList(asks_);
         } else {
@@ -1843,7 +1911,7 @@ public final class Protos {
         }
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
       public int getAsksCount() {
         if (asksBuilder_ == null) {
@@ -1853,9 +1921,9 @@ public final class Protos {
         }
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
-      public Protos.Depth.BidAsk getAsks(int index) {
+      public Protos.BidAskSchema getAsks(int index) {
         if (asksBuilder_ == null) {
           return asks_.get(index);
         } else {
@@ -1863,10 +1931,10 @@ public final class Protos {
         }
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
       public Builder setAsks(
-          int index, Protos.Depth.BidAsk value) {
+          int index, Protos.BidAskSchema value) {
         if (asksBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1880,10 +1948,10 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
       public Builder setAsks(
-          int index, Protos.Depth.BidAsk.Builder builderForValue) {
+          int index, Protos.BidAskSchema.Builder builderForValue) {
         if (asksBuilder_ == null) {
           ensureAsksIsMutable();
           asks_.set(index, builderForValue.build());
@@ -1894,9 +1962,9 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
-      public Builder addAsks(Protos.Depth.BidAsk value) {
+      public Builder addAsks(Protos.BidAskSchema value) {
         if (asksBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1910,10 +1978,10 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
       public Builder addAsks(
-          int index, Protos.Depth.BidAsk value) {
+          int index, Protos.BidAskSchema value) {
         if (asksBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1927,10 +1995,10 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
       public Builder addAsks(
-          Protos.Depth.BidAsk.Builder builderForValue) {
+          Protos.BidAskSchema.Builder builderForValue) {
         if (asksBuilder_ == null) {
           ensureAsksIsMutable();
           asks_.add(builderForValue.build());
@@ -1941,10 +2009,10 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
       public Builder addAsks(
-          int index, Protos.Depth.BidAsk.Builder builderForValue) {
+          int index, Protos.BidAskSchema.Builder builderForValue) {
         if (asksBuilder_ == null) {
           ensureAsksIsMutable();
           asks_.add(index, builderForValue.build());
@@ -1955,10 +2023,10 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
       public Builder addAllAsks(
-          java.lang.Iterable<? extends Protos.Depth.BidAsk> values) {
+          java.lang.Iterable<? extends Protos.BidAskSchema> values) {
         if (asksBuilder_ == null) {
           ensureAsksIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -1970,7 +2038,7 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
       public Builder clearAsks() {
         if (asksBuilder_ == null) {
@@ -1983,7 +2051,7 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
       public Builder removeAsks(int index) {
         if (asksBuilder_ == null) {
@@ -1996,16 +2064,16 @@ public final class Protos {
         return this;
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
-      public Protos.Depth.BidAsk.Builder getAsksBuilder(
+      public Protos.BidAskSchema.Builder getAsksBuilder(
           int index) {
         return getAsksFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
-      public Protos.Depth.BidAskOrBuilder getAsksOrBuilder(
+      public Protos.BidAskSchemaOrBuilder getAsksOrBuilder(
           int index) {
         if (asksBuilder_ == null) {
           return asks_.get(index);  } else {
@@ -2013,9 +2081,9 @@ public final class Protos {
         }
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
-      public java.util.List<? extends Protos.Depth.BidAskOrBuilder> 
+      public java.util.List<? extends Protos.BidAskSchemaOrBuilder> 
            getAsksOrBuilderList() {
         if (asksBuilder_ != null) {
           return asksBuilder_.getMessageOrBuilderList();
@@ -2024,33 +2092,33 @@ public final class Protos {
         }
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
-      public Protos.Depth.BidAsk.Builder addAsksBuilder() {
+      public Protos.BidAskSchema.Builder addAsksBuilder() {
         return getAsksFieldBuilder().addBuilder(
-            Protos.Depth.BidAsk.getDefaultInstance());
+            Protos.BidAskSchema.getDefaultInstance());
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
-      public Protos.Depth.BidAsk.Builder addAsksBuilder(
+      public Protos.BidAskSchema.Builder addAsksBuilder(
           int index) {
         return getAsksFieldBuilder().addBuilder(
-            index, Protos.Depth.BidAsk.getDefaultInstance());
+            index, Protos.BidAskSchema.getDefaultInstance());
       }
       /**
-       * <code>repeated .Depth.BidAsk asks = 5;</code>
+       * <code>repeated .BidAskSchema asks = 5;</code>
        */
-      public java.util.List<Protos.Depth.BidAsk.Builder> 
+      public java.util.List<Protos.BidAskSchema.Builder> 
            getAsksBuilderList() {
         return getAsksFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          Protos.Depth.BidAsk, Protos.Depth.BidAsk.Builder, Protos.Depth.BidAskOrBuilder> 
+          Protos.BidAskSchema, Protos.BidAskSchema.Builder, Protos.BidAskSchemaOrBuilder> 
           getAsksFieldBuilder() {
         if (asksBuilder_ == null) {
           asksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              Protos.Depth.BidAsk, Protos.Depth.BidAsk.Builder, Protos.Depth.BidAskOrBuilder>(
+              Protos.BidAskSchema, Protos.BidAskSchema.Builder, Protos.BidAskSchemaOrBuilder>(
                   asks_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
@@ -2085,6 +2153,75 @@ public final class Protos {
         onChanged();
         return this;
       }
+
+      private java.lang.Object key_ = "";
+      /**
+       * <code>string key = 7;</code>
+       */
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string key = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string key = 7;</code>
+       */
+      public Builder setKey(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        key_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 7;</code>
+       */
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string key = 7;</code>
+       */
+      public Builder setKeyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        key_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
@@ -2096,54 +2233,1191 @@ public final class Protos {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:Depth)
+      // @@protoc_insertion_point(builder_scope:DepthSchema)
     }
 
-    // @@protoc_insertion_point(class_scope:Depth)
-    private static final Protos.Depth DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:DepthSchema)
+    private static final Protos.DepthSchema DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Protos.Depth();
+      DEFAULT_INSTANCE = new Protos.DepthSchema();
     }
 
-    public static Protos.Depth getDefaultInstance() {
+    public static Protos.DepthSchema getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Depth>
-        PARSER = new com.google.protobuf.AbstractParser<Depth>() {
-      public Depth parsePartialFrom(
+    private static final com.google.protobuf.Parser<DepthSchema>
+        PARSER = new com.google.protobuf.AbstractParser<DepthSchema>() {
+      public DepthSchema parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Depth(input, extensionRegistry);
+        return new DepthSchema(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<Depth> parser() {
+    public static com.google.protobuf.Parser<DepthSchema> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Depth> getParserForType() {
+    public com.google.protobuf.Parser<DepthSchema> getParserForType() {
       return PARSER;
     }
 
-    public Protos.Depth getDefaultInstanceForType() {
+    public Protos.DepthSchema getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface FilterdSayaSchemaOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:FilterdSayaSchema)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string long_exchange = 1;</code>
+     */
+    java.lang.String getLongExchange();
+    /**
+     * <code>string long_exchange = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getLongExchangeBytes();
+
+    /**
+     * <code>string short_exchange = 2;</code>
+     */
+    java.lang.String getShortExchange();
+    /**
+     * <code>string short_exchange = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getShortExchangeBytes();
+
+    /**
+     * <code>string base = 3;</code>
+     */
+    java.lang.String getBase();
+    /**
+     * <code>string base = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getBaseBytes();
+
+    /**
+     * <code>string quote = 4;</code>
+     */
+    java.lang.String getQuote();
+    /**
+     * <code>string quote = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getQuoteBytes();
+
+    /**
+     * <code>double profit_rate = 5;</code>
+     */
+    double getProfitRate();
+
+    /**
+     * <code>double profit = 6;</code>
+     */
+    double getProfit();
+
+    /**
+     * <code>int64 timestamp = 7;</code>
+     */
+    long getTimestamp();
+  }
+  /**
+   * Protobuf type {@code FilterdSayaSchema}
+   */
+  public  static final class FilterdSayaSchema extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:FilterdSayaSchema)
+      FilterdSayaSchemaOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use FilterdSayaSchema.newBuilder() to construct.
+    private FilterdSayaSchema(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private FilterdSayaSchema() {
+      longExchange_ = "";
+      shortExchange_ = "";
+      base_ = "";
+      quote_ = "";
+      profitRate_ = 0D;
+      profit_ = 0D;
+      timestamp_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private FilterdSayaSchema(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              longExchange_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              shortExchange_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              base_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              quote_ = s;
+              break;
+            }
+            case 41: {
+
+              profitRate_ = input.readDouble();
+              break;
+            }
+            case 49: {
+
+              profit_ = input.readDouble();
+              break;
+            }
+            case 56: {
+
+              timestamp_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return Protos.internal_static_FilterdSayaSchema_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return Protos.internal_static_FilterdSayaSchema_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Protos.FilterdSayaSchema.class, Protos.FilterdSayaSchema.Builder.class);
+    }
+
+    public static final int LONG_EXCHANGE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object longExchange_;
+    /**
+     * <code>string long_exchange = 1;</code>
+     */
+    public java.lang.String getLongExchange() {
+      java.lang.Object ref = longExchange_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        longExchange_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string long_exchange = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLongExchangeBytes() {
+      java.lang.Object ref = longExchange_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        longExchange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SHORT_EXCHANGE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object shortExchange_;
+    /**
+     * <code>string short_exchange = 2;</code>
+     */
+    public java.lang.String getShortExchange() {
+      java.lang.Object ref = shortExchange_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        shortExchange_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string short_exchange = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getShortExchangeBytes() {
+      java.lang.Object ref = shortExchange_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shortExchange_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BASE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object base_;
+    /**
+     * <code>string base = 3;</code>
+     */
+    public java.lang.String getBase() {
+      java.lang.Object ref = base_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        base_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string base = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBaseBytes() {
+      java.lang.Object ref = base_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        base_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QUOTE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object quote_;
+    /**
+     * <code>string quote = 4;</code>
+     */
+    public java.lang.String getQuote() {
+      java.lang.Object ref = quote_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        quote_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string quote = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getQuoteBytes() {
+      java.lang.Object ref = quote_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        quote_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROFIT_RATE_FIELD_NUMBER = 5;
+    private double profitRate_;
+    /**
+     * <code>double profit_rate = 5;</code>
+     */
+    public double getProfitRate() {
+      return profitRate_;
+    }
+
+    public static final int PROFIT_FIELD_NUMBER = 6;
+    private double profit_;
+    /**
+     * <code>double profit = 6;</code>
+     */
+    public double getProfit() {
+      return profit_;
+    }
+
+    public static final int TIMESTAMP_FIELD_NUMBER = 7;
+    private long timestamp_;
+    /**
+     * <code>int64 timestamp = 7;</code>
+     */
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getLongExchangeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, longExchange_);
+      }
+      if (!getShortExchangeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, shortExchange_);
+      }
+      if (!getBaseBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, base_);
+      }
+      if (!getQuoteBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, quote_);
+      }
+      if (profitRate_ != 0D) {
+        output.writeDouble(5, profitRate_);
+      }
+      if (profit_ != 0D) {
+        output.writeDouble(6, profit_);
+      }
+      if (timestamp_ != 0L) {
+        output.writeInt64(7, timestamp_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getLongExchangeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, longExchange_);
+      }
+      if (!getShortExchangeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, shortExchange_);
+      }
+      if (!getBaseBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, base_);
+      }
+      if (!getQuoteBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, quote_);
+      }
+      if (profitRate_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(5, profitRate_);
+      }
+      if (profit_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(6, profit_);
+      }
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(7, timestamp_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof Protos.FilterdSayaSchema)) {
+        return super.equals(obj);
+      }
+      Protos.FilterdSayaSchema other = (Protos.FilterdSayaSchema) obj;
+
+      boolean result = true;
+      result = result && getLongExchange()
+          .equals(other.getLongExchange());
+      result = result && getShortExchange()
+          .equals(other.getShortExchange());
+      result = result && getBase()
+          .equals(other.getBase());
+      result = result && getQuote()
+          .equals(other.getQuote());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getProfitRate())
+          == java.lang.Double.doubleToLongBits(
+              other.getProfitRate()));
+      result = result && (
+          java.lang.Double.doubleToLongBits(getProfit())
+          == java.lang.Double.doubleToLongBits(
+              other.getProfit()));
+      result = result && (getTimestamp()
+          == other.getTimestamp());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LONG_EXCHANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getLongExchange().hashCode();
+      hash = (37 * hash) + SHORT_EXCHANGE_FIELD_NUMBER;
+      hash = (53 * hash) + getShortExchange().hashCode();
+      hash = (37 * hash) + BASE_FIELD_NUMBER;
+      hash = (53 * hash) + getBase().hashCode();
+      hash = (37 * hash) + QUOTE_FIELD_NUMBER;
+      hash = (53 * hash) + getQuote().hashCode();
+      hash = (37 * hash) + PROFIT_RATE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getProfitRate()));
+      hash = (37 * hash) + PROFIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getProfit()));
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static Protos.FilterdSayaSchema parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Protos.FilterdSayaSchema parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Protos.FilterdSayaSchema parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Protos.FilterdSayaSchema parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Protos.FilterdSayaSchema parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Protos.FilterdSayaSchema parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Protos.FilterdSayaSchema parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Protos.FilterdSayaSchema parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Protos.FilterdSayaSchema parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static Protos.FilterdSayaSchema parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Protos.FilterdSayaSchema parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Protos.FilterdSayaSchema parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(Protos.FilterdSayaSchema prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code FilterdSayaSchema}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:FilterdSayaSchema)
+        Protos.FilterdSayaSchemaOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return Protos.internal_static_FilterdSayaSchema_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return Protos.internal_static_FilterdSayaSchema_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Protos.FilterdSayaSchema.class, Protos.FilterdSayaSchema.Builder.class);
+      }
+
+      // Construct using Protos.FilterdSayaSchema.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        longExchange_ = "";
+
+        shortExchange_ = "";
+
+        base_ = "";
+
+        quote_ = "";
+
+        profitRate_ = 0D;
+
+        profit_ = 0D;
+
+        timestamp_ = 0L;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return Protos.internal_static_FilterdSayaSchema_descriptor;
+      }
+
+      public Protos.FilterdSayaSchema getDefaultInstanceForType() {
+        return Protos.FilterdSayaSchema.getDefaultInstance();
+      }
+
+      public Protos.FilterdSayaSchema build() {
+        Protos.FilterdSayaSchema result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public Protos.FilterdSayaSchema buildPartial() {
+        Protos.FilterdSayaSchema result = new Protos.FilterdSayaSchema(this);
+        result.longExchange_ = longExchange_;
+        result.shortExchange_ = shortExchange_;
+        result.base_ = base_;
+        result.quote_ = quote_;
+        result.profitRate_ = profitRate_;
+        result.profit_ = profit_;
+        result.timestamp_ = timestamp_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Protos.FilterdSayaSchema) {
+          return mergeFrom((Protos.FilterdSayaSchema)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Protos.FilterdSayaSchema other) {
+        if (other == Protos.FilterdSayaSchema.getDefaultInstance()) return this;
+        if (!other.getLongExchange().isEmpty()) {
+          longExchange_ = other.longExchange_;
+          onChanged();
+        }
+        if (!other.getShortExchange().isEmpty()) {
+          shortExchange_ = other.shortExchange_;
+          onChanged();
+        }
+        if (!other.getBase().isEmpty()) {
+          base_ = other.base_;
+          onChanged();
+        }
+        if (!other.getQuote().isEmpty()) {
+          quote_ = other.quote_;
+          onChanged();
+        }
+        if (other.getProfitRate() != 0D) {
+          setProfitRate(other.getProfitRate());
+        }
+        if (other.getProfit() != 0D) {
+          setProfit(other.getProfit());
+        }
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Protos.FilterdSayaSchema parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (Protos.FilterdSayaSchema) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object longExchange_ = "";
+      /**
+       * <code>string long_exchange = 1;</code>
+       */
+      public java.lang.String getLongExchange() {
+        java.lang.Object ref = longExchange_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          longExchange_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string long_exchange = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLongExchangeBytes() {
+        java.lang.Object ref = longExchange_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          longExchange_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string long_exchange = 1;</code>
+       */
+      public Builder setLongExchange(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        longExchange_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string long_exchange = 1;</code>
+       */
+      public Builder clearLongExchange() {
+        
+        longExchange_ = getDefaultInstance().getLongExchange();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string long_exchange = 1;</code>
+       */
+      public Builder setLongExchangeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        longExchange_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object shortExchange_ = "";
+      /**
+       * <code>string short_exchange = 2;</code>
+       */
+      public java.lang.String getShortExchange() {
+        java.lang.Object ref = shortExchange_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          shortExchange_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string short_exchange = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getShortExchangeBytes() {
+        java.lang.Object ref = shortExchange_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          shortExchange_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string short_exchange = 2;</code>
+       */
+      public Builder setShortExchange(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        shortExchange_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string short_exchange = 2;</code>
+       */
+      public Builder clearShortExchange() {
+        
+        shortExchange_ = getDefaultInstance().getShortExchange();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string short_exchange = 2;</code>
+       */
+      public Builder setShortExchangeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        shortExchange_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object base_ = "";
+      /**
+       * <code>string base = 3;</code>
+       */
+      public java.lang.String getBase() {
+        java.lang.Object ref = base_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          base_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string base = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getBaseBytes() {
+        java.lang.Object ref = base_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          base_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string base = 3;</code>
+       */
+      public Builder setBase(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        base_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string base = 3;</code>
+       */
+      public Builder clearBase() {
+        
+        base_ = getDefaultInstance().getBase();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string base = 3;</code>
+       */
+      public Builder setBaseBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        base_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object quote_ = "";
+      /**
+       * <code>string quote = 4;</code>
+       */
+      public java.lang.String getQuote() {
+        java.lang.Object ref = quote_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          quote_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string quote = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getQuoteBytes() {
+        java.lang.Object ref = quote_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          quote_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string quote = 4;</code>
+       */
+      public Builder setQuote(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        quote_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string quote = 4;</code>
+       */
+      public Builder clearQuote() {
+        
+        quote_ = getDefaultInstance().getQuote();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string quote = 4;</code>
+       */
+      public Builder setQuoteBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        quote_ = value;
+        onChanged();
+        return this;
+      }
+
+      private double profitRate_ ;
+      /**
+       * <code>double profit_rate = 5;</code>
+       */
+      public double getProfitRate() {
+        return profitRate_;
+      }
+      /**
+       * <code>double profit_rate = 5;</code>
+       */
+      public Builder setProfitRate(double value) {
+        
+        profitRate_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double profit_rate = 5;</code>
+       */
+      public Builder clearProfitRate() {
+        
+        profitRate_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double profit_ ;
+      /**
+       * <code>double profit = 6;</code>
+       */
+      public double getProfit() {
+        return profit_;
+      }
+      /**
+       * <code>double profit = 6;</code>
+       */
+      public Builder setProfit(double value) {
+        
+        profit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double profit = 6;</code>
+       */
+      public Builder clearProfit() {
+        
+        profit_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private long timestamp_ ;
+      /**
+       * <code>int64 timestamp = 7;</code>
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>int64 timestamp = 7;</code>
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 timestamp = 7;</code>
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:FilterdSayaSchema)
+    }
+
+    // @@protoc_insertion_point(class_scope:FilterdSayaSchema)
+    private static final Protos.FilterdSayaSchema DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Protos.FilterdSayaSchema();
+    }
+
+    public static Protos.FilterdSayaSchema getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<FilterdSayaSchema>
+        PARSER = new com.google.protobuf.AbstractParser<FilterdSayaSchema>() {
+      public FilterdSayaSchema parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new FilterdSayaSchema(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<FilterdSayaSchema> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<FilterdSayaSchema> getParserForType() {
+      return PARSER;
+    }
+
+    public Protos.FilterdSayaSchema getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Depth_descriptor;
+    internal_static_BidAskSchema_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Depth_fieldAccessorTable;
+      internal_static_BidAskSchema_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_Depth_BidAsk_descriptor;
+    internal_static_DepthSchema_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_Depth_BidAsk_fieldAccessorTable;
+      internal_static_DepthSchema_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_FilterdSayaSchema_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_FilterdSayaSchema_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2153,11 +3427,16 @@ public final class Protos {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014protos.proto\"\254\001\n\005Depth\022\020\n\010exchange\030\001 \001" +
-      "(\t\022\014\n\004base\030\002 \001(\t\022\r\n\005quote\030\003 \001(\t\022\033\n\004bids\030" +
-      "\004 \003(\0132\r.Depth.BidAsk\022\033\n\004asks\030\005 \003(\0132\r.Dep" +
-      "th.BidAsk\022\021\n\ttimestamp\030\006 \001(\003\032\'\n\006BidAsk\022\r" +
-      "\n\005price\030\001 \001(\001\022\016\n\006amount\030\002 \001(\001b\006proto3"
+      "\n\014protos.proto\"-\n\014BidAskSchema\022\r\n\005price\030" +
+      "\001 \001(\001\022\016\n\006amount\030\002 \001(\001\"\226\001\n\013DepthSchema\022\020\n" +
+      "\010exchange\030\001 \001(\t\022\014\n\004base\030\002 \001(\t\022\r\n\005quote\030\003" +
+      " \001(\t\022\033\n\004bids\030\004 \003(\0132\r.BidAskSchema\022\033\n\004ask" +
+      "s\030\005 \003(\0132\r.BidAskSchema\022\021\n\ttimestamp\030\006 \001(" +
+      "\003\022\013\n\003key\030\007 \001(\t\"\227\001\n\021FilterdSayaSchema\022\025\n\r" +
+      "long_exchange\030\001 \001(\t\022\026\n\016short_exchange\030\002 " +
+      "\001(\t\022\014\n\004base\030\003 \001(\t\022\r\n\005quote\030\004 \001(\t\022\023\n\013prof" +
+      "it_rate\030\005 \001(\001\022\016\n\006profit\030\006 \001(\001\022\021\n\ttimesta" +
+      "mp\030\007 \001(\003b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2171,18 +3450,24 @@ public final class Protos {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_Depth_descriptor =
+    internal_static_BidAskSchema_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_Depth_fieldAccessorTable = new
+    internal_static_BidAskSchema_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Depth_descriptor,
-        new java.lang.String[] { "Exchange", "Base", "Quote", "Bids", "Asks", "Timestamp", });
-    internal_static_Depth_BidAsk_descriptor =
-      internal_static_Depth_descriptor.getNestedTypes().get(0);
-    internal_static_Depth_BidAsk_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_Depth_BidAsk_descriptor,
+        internal_static_BidAskSchema_descriptor,
         new java.lang.String[] { "Price", "Amount", });
+    internal_static_DepthSchema_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_DepthSchema_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DepthSchema_descriptor,
+        new java.lang.String[] { "Exchange", "Base", "Quote", "Bids", "Asks", "Timestamp", "Key", });
+    internal_static_FilterdSayaSchema_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_FilterdSayaSchema_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_FilterdSayaSchema_descriptor,
+        new java.lang.String[] { "LongExchange", "ShortExchange", "Base", "Quote", "ProfitRate", "Profit", "Timestamp", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

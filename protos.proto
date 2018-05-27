@@ -1,14 +1,24 @@
 syntax = "proto3";
 
-message Depth {
+message BidAskSchema {
+  double price = 1;
+  double amount = 2;
+}
+message DepthSchema {
   string exchange = 1;
   string base = 2;
   string quote = 3;
-  message BidAsk {
-    double price = 1;
-    double amount = 2;
-  }
-  repeated BidAsk bids = 4;
-  repeated BidAsk asks = 5;
+  repeated BidAskSchema bids = 4;
+  repeated BidAskSchema asks = 5;
   int64 timestamp = 6;
+  string key = 7;
+}
+message SayaSchema {
+  string long_exchange = 1;
+  string short_exchange = 2;
+  string base = 3;
+  string quote = 4;
+  double profit_rate = 5;
+  double profit = 6;
+  int64 timestamp = 7;
 }

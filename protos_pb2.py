@@ -19,28 +19,28 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='protos.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\x0cprotos.proto\"\xac\x01\n\x05\x44\x65pth\x12\x10\n\x08\x65xchange\x18\x01 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x02 \x01(\t\x12\r\n\x05quote\x18\x03 \x01(\t\x12\x1b\n\x04\x62ids\x18\x04 \x03(\x0b\x32\r.Depth.BidAsk\x12\x1b\n\x04\x61sks\x18\x05 \x03(\x0b\x32\r.Depth.BidAsk\x12\x11\n\ttimestamp\x18\x06 \x01(\x03\x1a\'\n\x06\x42idAsk\x12\r\n\x05price\x18\x01 \x01(\x01\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x0cprotos.proto\"-\n\x0c\x42idAskSchema\x12\r\n\x05price\x18\x01 \x01(\x01\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\"\x96\x01\n\x0b\x44\x65pthSchema\x12\x10\n\x08\x65xchange\x18\x01 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x02 \x01(\t\x12\r\n\x05quote\x18\x03 \x01(\t\x12\x1b\n\x04\x62ids\x18\x04 \x03(\x0b\x32\r.BidAskSchema\x12\x1b\n\x04\x61sks\x18\x05 \x03(\x0b\x32\r.BidAskSchema\x12\x11\n\ttimestamp\x18\x06 \x01(\x03\x12\x0b\n\x03key\x18\x07 \x01(\t\"\x97\x01\n\x11\x46ilterdSayaSchema\x12\x15\n\rlong_exchange\x18\x01 \x01(\t\x12\x16\n\x0eshort_exchange\x18\x02 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x03 \x01(\t\x12\r\n\x05quote\x18\x04 \x01(\t\x12\x13\n\x0bprofit_rate\x18\x05 \x01(\x01\x12\x0e\n\x06profit\x18\x06 \x01(\x01\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x62\x06proto3')
 )
 
 
 
 
-_DEPTH_BIDASK = _descriptor.Descriptor(
-  name='BidAsk',
-  full_name='Depth.BidAsk',
+_BIDASKSCHEMA = _descriptor.Descriptor(
+  name='BidAskSchema',
+  full_name='BidAskSchema',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='price', full_name='Depth.BidAsk.price', index=0,
+      name='price', full_name='BidAskSchema.price', index=0,
       number=1, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='amount', full_name='Depth.BidAsk.amount', index=1,
+      name='amount', full_name='BidAskSchema.amount', index=1,
       number=2, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -58,63 +58,71 @@ _DEPTH_BIDASK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=150,
-  serialized_end=189,
+  serialized_start=16,
+  serialized_end=61,
 )
 
-_DEPTH = _descriptor.Descriptor(
-  name='Depth',
-  full_name='Depth',
+
+_DEPTHSCHEMA = _descriptor.Descriptor(
+  name='DepthSchema',
+  full_name='DepthSchema',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='exchange', full_name='Depth.exchange', index=0,
+      name='exchange', full_name='DepthSchema.exchange', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='base', full_name='Depth.base', index=1,
+      name='base', full_name='DepthSchema.base', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='quote', full_name='Depth.quote', index=2,
+      name='quote', full_name='DepthSchema.quote', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='bids', full_name='Depth.bids', index=3,
+      name='bids', full_name='DepthSchema.bids', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='asks', full_name='Depth.asks', index=4,
+      name='asks', full_name='DepthSchema.asks', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='Depth.timestamp', index=5,
+      name='timestamp', full_name='DepthSchema.timestamp', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='key', full_name='DepthSchema.key', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[_DEPTH_BIDASK, ],
+  nested_types=[],
   enum_types=[
   ],
   options=None,
@@ -123,30 +131,110 @@ _DEPTH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=17,
-  serialized_end=189,
+  serialized_start=64,
+  serialized_end=214,
 )
 
-_DEPTH_BIDASK.containing_type = _DEPTH
-_DEPTH.fields_by_name['bids'].message_type = _DEPTH_BIDASK
-_DEPTH.fields_by_name['asks'].message_type = _DEPTH_BIDASK
-DESCRIPTOR.message_types_by_name['Depth'] = _DEPTH
+
+_FILTERDSAYASCHEMA = _descriptor.Descriptor(
+  name='FilterdSayaSchema',
+  full_name='FilterdSayaSchema',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='long_exchange', full_name='FilterdSayaSchema.long_exchange', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='short_exchange', full_name='FilterdSayaSchema.short_exchange', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='base', full_name='FilterdSayaSchema.base', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='quote', full_name='FilterdSayaSchema.quote', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='profit_rate', full_name='FilterdSayaSchema.profit_rate', index=4,
+      number=5, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='profit', full_name='FilterdSayaSchema.profit', index=5,
+      number=6, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='FilterdSayaSchema.timestamp', index=6,
+      number=7, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=217,
+  serialized_end=368,
+)
+
+_DEPTHSCHEMA.fields_by_name['bids'].message_type = _BIDASKSCHEMA
+_DEPTHSCHEMA.fields_by_name['asks'].message_type = _BIDASKSCHEMA
+DESCRIPTOR.message_types_by_name['BidAskSchema'] = _BIDASKSCHEMA
+DESCRIPTOR.message_types_by_name['DepthSchema'] = _DEPTHSCHEMA
+DESCRIPTOR.message_types_by_name['FilterdSayaSchema'] = _FILTERDSAYASCHEMA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Depth = _reflection.GeneratedProtocolMessageType('Depth', (_message.Message,), dict(
-
-  BidAsk = _reflection.GeneratedProtocolMessageType('BidAsk', (_message.Message,), dict(
-    DESCRIPTOR = _DEPTH_BIDASK,
-    __module__ = 'protos_pb2'
-    # @@protoc_insertion_point(class_scope:Depth.BidAsk)
-    ))
-  ,
-  DESCRIPTOR = _DEPTH,
+BidAskSchema = _reflection.GeneratedProtocolMessageType('BidAskSchema', (_message.Message,), dict(
+  DESCRIPTOR = _BIDASKSCHEMA,
   __module__ = 'protos_pb2'
-  # @@protoc_insertion_point(class_scope:Depth)
+  # @@protoc_insertion_point(class_scope:BidAskSchema)
   ))
-_sym_db.RegisterMessage(Depth)
-_sym_db.RegisterMessage(Depth.BidAsk)
+_sym_db.RegisterMessage(BidAskSchema)
+
+DepthSchema = _reflection.GeneratedProtocolMessageType('DepthSchema', (_message.Message,), dict(
+  DESCRIPTOR = _DEPTHSCHEMA,
+  __module__ = 'protos_pb2'
+  # @@protoc_insertion_point(class_scope:DepthSchema)
+  ))
+_sym_db.RegisterMessage(DepthSchema)
+
+FilterdSayaSchema = _reflection.GeneratedProtocolMessageType('FilterdSayaSchema', (_message.Message,), dict(
+  DESCRIPTOR = _FILTERDSAYASCHEMA,
+  __module__ = 'protos_pb2'
+  # @@protoc_insertion_point(class_scope:FilterdSayaSchema)
+  ))
+_sym_db.RegisterMessage(FilterdSayaSchema)
 
 
 # @@protoc_insertion_point(module_scope)
