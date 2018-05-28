@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='protos.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\x0cprotos.proto\"-\n\x0c\x42idAskSchema\x12\r\n\x05price\x18\x01 \x01(\x01\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\"\x96\x01\n\x0b\x44\x65pthSchema\x12\x10\n\x08\x65xchange\x18\x01 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x02 \x01(\t\x12\r\n\x05quote\x18\x03 \x01(\t\x12\x1b\n\x04\x62ids\x18\x04 \x03(\x0b\x32\r.BidAskSchema\x12\x1b\n\x04\x61sks\x18\x05 \x03(\x0b\x32\r.BidAskSchema\x12\x11\n\ttimestamp\x18\x06 \x01(\x03\x12\x0b\n\x03key\x18\x07 \x01(\t\"\x97\x01\n\x11\x46ilterdSayaSchema\x12\x15\n\rlong_exchange\x18\x01 \x01(\t\x12\x16\n\x0eshort_exchange\x18\x02 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x03 \x01(\t\x12\r\n\x05quote\x18\x04 \x01(\t\x12\x13\n\x0bprofit_rate\x18\x05 \x01(\x01\x12\x0e\n\x06profit\x18\x06 \x01(\x01\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x62\x06proto3')
+  serialized_pb=_b('\n\x0cprotos.proto\"-\n\x0c\x42idAskSchema\x12\r\n\x05price\x18\x01 \x01(\x01\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\"\x96\x01\n\x0b\x44\x65pthSchema\x12\x10\n\x08\x65xchange\x18\x01 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x02 \x01(\t\x12\r\n\x05quote\x18\x03 \x01(\t\x12\x1b\n\x04\x62ids\x18\x04 \x03(\x0b\x32\r.BidAskSchema\x12\x1b\n\x04\x61sks\x18\x05 \x03(\x0b\x32\r.BidAskSchema\x12\x11\n\ttimestamp\x18\x06 \x01(\x03\x12\x0b\n\x03key\x18\x07 \x01(\t\"\x92\x01\n\x0cSpreadSchema\x12\x15\n\rlong_exchange\x18\x01 \x01(\t\x12\x16\n\x0eshort_exchange\x18\x02 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x03 \x01(\t\x12\r\n\x05quote\x18\x04 \x01(\t\x12\x13\n\x0bprofit_rate\x18\x05 \x01(\x01\x12\x0e\n\x06profit\x18\x06 \x01(\x01\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\"\x9b\x01\n\x0bTradeSchema\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08trade_id\x18\x02 \x01(\t\x12\x10\n\x08\x65xchange\x18\x03 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x04 \x01(\t\x12\r\n\x05quote\x18\x05 \x01(\t\x12\r\n\x05price\x18\x06 \x01(\x01\x12\x0e\n\x06\x61mount\x18\x07 \x01(\x01\x12\x11\n\ttimestamp\x18\x08 \x01(\x03\x12\x0c\n\x04side\x18\t \x01(\tb\x06proto3')
 )
 
 
@@ -136,57 +136,57 @@ _DEPTHSCHEMA = _descriptor.Descriptor(
 )
 
 
-_FILTERDSAYASCHEMA = _descriptor.Descriptor(
-  name='FilterdSayaSchema',
-  full_name='FilterdSayaSchema',
+_SPREADSCHEMA = _descriptor.Descriptor(
+  name='SpreadSchema',
+  full_name='SpreadSchema',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='long_exchange', full_name='FilterdSayaSchema.long_exchange', index=0,
+      name='long_exchange', full_name='SpreadSchema.long_exchange', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='short_exchange', full_name='FilterdSayaSchema.short_exchange', index=1,
+      name='short_exchange', full_name='SpreadSchema.short_exchange', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='base', full_name='FilterdSayaSchema.base', index=2,
+      name='base', full_name='SpreadSchema.base', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='quote', full_name='FilterdSayaSchema.quote', index=3,
+      name='quote', full_name='SpreadSchema.quote', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='profit_rate', full_name='FilterdSayaSchema.profit_rate', index=4,
+      name='profit_rate', full_name='SpreadSchema.profit_rate', index=4,
       number=5, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='profit', full_name='FilterdSayaSchema.profit', index=5,
+      name='profit', full_name='SpreadSchema.profit', index=5,
       number=6, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='FilterdSayaSchema.timestamp', index=6,
+      name='timestamp', full_name='SpreadSchema.timestamp', index=6,
       number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -205,14 +205,102 @@ _FILTERDSAYASCHEMA = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=217,
-  serialized_end=368,
+  serialized_end=363,
+)
+
+
+_TRADESCHEMA = _descriptor.Descriptor(
+  name='TradeSchema',
+  full_name='TradeSchema',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='TradeSchema.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='trade_id', full_name='TradeSchema.trade_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='exchange', full_name='TradeSchema.exchange', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='base', full_name='TradeSchema.base', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='quote', full_name='TradeSchema.quote', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='price', full_name='TradeSchema.price', index=5,
+      number=6, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='amount', full_name='TradeSchema.amount', index=6,
+      number=7, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='TradeSchema.timestamp', index=7,
+      number=8, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='side', full_name='TradeSchema.side', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=366,
+  serialized_end=521,
 )
 
 _DEPTHSCHEMA.fields_by_name['bids'].message_type = _BIDASKSCHEMA
 _DEPTHSCHEMA.fields_by_name['asks'].message_type = _BIDASKSCHEMA
 DESCRIPTOR.message_types_by_name['BidAskSchema'] = _BIDASKSCHEMA
 DESCRIPTOR.message_types_by_name['DepthSchema'] = _DEPTHSCHEMA
-DESCRIPTOR.message_types_by_name['FilterdSayaSchema'] = _FILTERDSAYASCHEMA
+DESCRIPTOR.message_types_by_name['SpreadSchema'] = _SPREADSCHEMA
+DESCRIPTOR.message_types_by_name['TradeSchema'] = _TRADESCHEMA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 BidAskSchema = _reflection.GeneratedProtocolMessageType('BidAskSchema', (_message.Message,), dict(
@@ -229,12 +317,19 @@ DepthSchema = _reflection.GeneratedProtocolMessageType('DepthSchema', (_message.
   ))
 _sym_db.RegisterMessage(DepthSchema)
 
-FilterdSayaSchema = _reflection.GeneratedProtocolMessageType('FilterdSayaSchema', (_message.Message,), dict(
-  DESCRIPTOR = _FILTERDSAYASCHEMA,
+SpreadSchema = _reflection.GeneratedProtocolMessageType('SpreadSchema', (_message.Message,), dict(
+  DESCRIPTOR = _SPREADSCHEMA,
   __module__ = 'protos_pb2'
-  # @@protoc_insertion_point(class_scope:FilterdSayaSchema)
+  # @@protoc_insertion_point(class_scope:SpreadSchema)
   ))
-_sym_db.RegisterMessage(FilterdSayaSchema)
+_sym_db.RegisterMessage(SpreadSchema)
+
+TradeSchema = _reflection.GeneratedProtocolMessageType('TradeSchema', (_message.Message,), dict(
+  DESCRIPTOR = _TRADESCHEMA,
+  __module__ = 'protos_pb2'
+  # @@protoc_insertion_point(class_scope:TradeSchema)
+  ))
+_sym_db.RegisterMessage(TradeSchema)
 
 
 # @@protoc_insertion_point(module_scope)

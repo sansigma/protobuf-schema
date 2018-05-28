@@ -13,7 +13,8 @@ message DepthSchema {
   int64 timestamp = 6;
   string key = 7;
 }
-message SayaSchema {
+
+message SpreadSchema {
   string long_exchange = 1;
   string short_exchange = 2;
   string base = 3;
@@ -21,4 +22,16 @@ message SayaSchema {
   double profit_rate = 5;
   double profit = 6;
   int64 timestamp = 7;
+}
+
+message TradeSchema {
+  string key = 1;
+  string trade_id = 2;
+  string exchange = 3;
+  string base = 4;
+  string quote = 5;
+  double price = 6;
+  double amount = 7;
+  int64 timestamp = 8;
+  string side = 9;
 }
