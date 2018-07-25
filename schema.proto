@@ -1,4 +1,5 @@
 syntax = "proto3";
+package sansigmabuffers;
 
 message BidAskSchema {
   double price = 1;
