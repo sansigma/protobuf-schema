@@ -2329,6 +2329,11 @@ public final class Protos {
      * <code>int64 timestamp = 7;</code>
      */
     long getTimestamp();
+
+    /**
+     * <code>double invested_capital = 8;</code>
+     */
+    double getInvestedCapital();
   }
   /**
    * Protobuf type {@code SpreadSchema}
@@ -2350,6 +2355,7 @@ public final class Protos {
       profitRate_ = 0D;
       profit_ = 0D;
       timestamp_ = 0L;
+      investedCapital_ = 0D;
     }
 
     @java.lang.Override
@@ -2420,6 +2426,11 @@ public final class Protos {
             case 56: {
 
               timestamp_ = input.readInt64();
+              break;
+            }
+            case 65: {
+
+              investedCapital_ = input.readDouble();
               break;
             }
           }
@@ -2609,6 +2620,15 @@ public final class Protos {
       return timestamp_;
     }
 
+    public static final int INVESTED_CAPITAL_FIELD_NUMBER = 8;
+    private double investedCapital_;
+    /**
+     * <code>double invested_capital = 8;</code>
+     */
+    public double getInvestedCapital() {
+      return investedCapital_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -2642,6 +2662,9 @@ public final class Protos {
       if (timestamp_ != 0L) {
         output.writeInt64(7, timestamp_);
       }
+      if (investedCapital_ != 0D) {
+        output.writeDouble(8, investedCapital_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2673,6 +2696,10 @@ public final class Protos {
       if (timestamp_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(7, timestamp_);
+      }
+      if (investedCapital_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(8, investedCapital_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2708,6 +2735,10 @@ public final class Protos {
               other.getProfit()));
       result = result && (getTimestamp()
           == other.getTimestamp());
+      result = result && (
+          java.lang.Double.doubleToLongBits(getInvestedCapital())
+          == java.lang.Double.doubleToLongBits(
+              other.getInvestedCapital()));
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2736,6 +2767,9 @@ public final class Protos {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTimestamp());
+      hash = (37 * hash) + INVESTED_CAPITAL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getInvestedCapital()));
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2879,6 +2913,8 @@ public final class Protos {
 
         timestamp_ = 0L;
 
+        investedCapital_ = 0D;
+
         return this;
       }
 
@@ -2908,6 +2944,7 @@ public final class Protos {
         result.profitRate_ = profitRate_;
         result.profit_ = profit_;
         result.timestamp_ = timestamp_;
+        result.investedCapital_ = investedCapital_;
         onBuilt();
         return result;
       }
@@ -2973,6 +3010,9 @@ public final class Protos {
         }
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
+        }
+        if (other.getInvestedCapital() != 0D) {
+          setInvestedCapital(other.getInvestedCapital());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -3351,6 +3391,32 @@ public final class Protos {
       public Builder clearTimestamp() {
         
         timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private double investedCapital_ ;
+      /**
+       * <code>double invested_capital = 8;</code>
+       */
+      public double getInvestedCapital() {
+        return investedCapital_;
+      }
+      /**
+       * <code>double invested_capital = 8;</code>
+       */
+      public Builder setInvestedCapital(double value) {
+        
+        investedCapital_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>double invested_capital = 8;</code>
+       */
+      public Builder clearInvestedCapital() {
+        
+        investedCapital_ = 0D;
         onChanged();
         return this;
       }
@@ -4843,15 +4909,15 @@ public final class Protos {
       "\010exchange\030\001 \001(\t\022\014\n\004base\030\002 \001(\t\022\r\n\005quote\030\003" +
       " \001(\t\022\033\n\004bids\030\004 \003(\0132\r.BidAskSchema\022\033\n\004ask" +
       "s\030\005 \003(\0132\r.BidAskSchema\022\021\n\ttimestamp\030\006 \001(" +
-      "\003\022\013\n\003key\030\007 \001(\t\"\222\001\n\014SpreadSchema\022\025\n\rlong_" +
+      "\003\022\013\n\003key\030\007 \001(\t\"\254\001\n\014SpreadSchema\022\025\n\rlong_" +
       "exchange\030\001 \001(\t\022\026\n\016short_exchange\030\002 \001(\t\022\014" +
       "\n\004base\030\003 \001(\t\022\r\n\005quote\030\004 \001(\t\022\023\n\013profit_ra" +
       "te\030\005 \001(\001\022\016\n\006profit\030\006 \001(\001\022\021\n\ttimestamp\030\007 " +
-      "\001(\003\"\233\001\n\013TradeSchema\022\013\n\003key\030\001 \001(\t\022\020\n\010trad" +
-      "e_id\030\002 \001(\t\022\020\n\010exchange\030\003 \001(\t\022\014\n\004base\030\004 \001" +
-      "(\t\022\r\n\005quote\030\005 \001(\t\022\r\n\005price\030\006 \001(\001\022\016\n\006amou" +
-      "nt\030\007 \001(\001\022\021\n\ttimestamp\030\010 \001(\003\022\014\n\004side\030\t \001(" +
-      "\tb\006proto3"
+      "\001(\003\022\030\n\020invested_capital\030\010 \001(\001\"\233\001\n\013TradeS" +
+      "chema\022\013\n\003key\030\001 \001(\t\022\020\n\010trade_id\030\002 \001(\t\022\020\n\010" +
+      "exchange\030\003 \001(\t\022\014\n\004base\030\004 \001(\t\022\r\n\005quote\030\005 " +
+      "\001(\t\022\r\n\005price\030\006 \001(\001\022\016\n\006amount\030\007 \001(\001\022\021\n\tti" +
+      "mestamp\030\010 \001(\003\022\014\n\004side\030\t \001(\tb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -4882,7 +4948,7 @@ public final class Protos {
     internal_static_SpreadSchema_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_SpreadSchema_descriptor,
-        new java.lang.String[] { "LongExchange", "ShortExchange", "Base", "Quote", "ProfitRate", "Profit", "Timestamp", });
+        new java.lang.String[] { "LongExchange", "ShortExchange", "Base", "Quote", "ProfitRate", "Profit", "Timestamp", "InvestedCapital", });
     internal_static_TradeSchema_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_TradeSchema_fieldAccessorTable = new

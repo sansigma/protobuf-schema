@@ -22,6 +22,7 @@ message SpreadSchema {
   double profit_rate = 5;
   double profit = 6;
   int64 timestamp = 7;
+  double invested_capital = 8;
 }
 
 message TradeSchema {
