@@ -64,5 +64,5 @@ message Arbitrage {
   double profit = 3;
   double profit_rate = 4;
   double investment = 5;
-  string profit_currency = 6;
+  string profit_asset = 6;
 }
