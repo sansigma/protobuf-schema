@@ -3,7 +3,6 @@
 
 import sys
 _b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
-from google.protobuf.internal import enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
@@ -20,12 +19,14 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='sansigmabuffers',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0cschema.proto\x12\x0fsansigmabuffers\"-\n\x0c\x42idAskSchema\x12\r\n\x05price\x18\x01 \x01(\x01\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\"\xb6\x01\n\x0b\x44\x65pthSchema\x12\x10\n\x08\x65xchange\x18\x01 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x02 \x01(\t\x12\r\n\x05quote\x18\x03 \x01(\t\x12+\n\x04\x62ids\x18\x04 \x03(\x0b\x32\x1d.sansigmabuffers.BidAskSchema\x12+\n\x04\x61sks\x18\x05 \x03(\x0b\x32\x1d.sansigmabuffers.BidAskSchema\x12\x11\n\ttimestamp\x18\x06 \x01(\x03\x12\x0b\n\x03key\x18\x07 \x01(\t\"\xac\x01\n\x0cSpreadSchema\x12\x15\n\rlong_exchange\x18\x01 \x01(\t\x12\x16\n\x0eshort_exchange\x18\x02 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x03 \x01(\t\x12\r\n\x05quote\x18\x04 \x01(\t\x12\x13\n\x0bprofit_rate\x18\x05 \x01(\x01\x12\x0e\n\x06profit\x18\x06 \x01(\x01\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x12\x18\n\x10invested_capital\x18\x08 \x01(\x01\"\x9b\x01\n\x0bTradeSchema\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08trade_id\x18\x02 \x01(\t\x12\x10\n\x08\x65xchange\x18\x03 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x04 \x01(\t\x12\r\n\x05quote\x18\x05 \x01(\t\x12\r\n\x05price\x18\x06 \x01(\x01\x12\x0e\n\x06\x61mount\x18\x07 \x01(\x01\x12\x11\n\ttimestamp\x18\x08 \x01(\x03\x12\x0c\n\x04side\x18\t \x01(\t\"\xa6\x01\n\nOrderPanel\x12\x10\n\x08\x65xchange\x18\x01 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x02 \x01(\t\x12\r\n\x05quote\x18\x03 \x01(\t\x12.\n\norder_side\x18\x04 \x01(\x0e\x32\x1a.sansigmabuffers.OrderSide\x12\r\n\x05price\x18\x05 \x01(\x01\x12\x14\n\x0c\x64\x65pth_amount\x18\x06 \x01(\x01\x12\x14\n\x0corder_amount\x18\x07 \x01(\x01\"\xb8\x01\n\tArbitrage\x12,\n\x04type\x18\x01 \x01(\x0e\x32\x1e.sansigmabuffers.ArbitrageType\x12+\n\x06orders\x18\x02 \x03(\x0b\x32\x1b.sansigmabuffers.OrderPanel\x12\x0e\n\x06profit\x18\x03 \x01(\x01\x12\x13\n\x0bprofit_rate\x18\x04 \x01(\x01\x12\x12\n\ninvestment\x18\x05 \x01(\x01\x12\x17\n\x0fprofit_currency\x18\x06 \x01(\x01*\x1e\n\tOrderSide\x12\x07\n\x03\x42uy\x10\x00\x12\x08\n\x04Sell\x10\x01*7\n\rArbitrageType\x12\n\n\x06Simple\x10\x00\x12\x0e\n\nTriangular\x10\x01\x12\n\n\x06\x43ircle\x10\x02\x62\x06proto3')
+  serialized_pb=_b('\n\x0cschema.proto\x12\x0fsansigmabuffers\"-\n\x0c\x42idAskSchema\x12\r\n\x05price\x18\x01 \x01(\x01\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\"\xb6\x01\n\x0b\x44\x65pthSchema\x12\x10\n\x08\x65xchange\x18\x01 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x02 \x01(\t\x12\r\n\x05quote\x18\x03 \x01(\t\x12+\n\x04\x62ids\x18\x04 \x03(\x0b\x32\x1d.sansigmabuffers.BidAskSchema\x12+\n\x04\x61sks\x18\x05 \x03(\x0b\x32\x1d.sansigmabuffers.BidAskSchema\x12\x11\n\ttimestamp\x18\x06 \x01(\x03\x12\x0b\n\x03key\x18\x07 \x01(\t\"\xac\x01\n\x0cSpreadSchema\x12\x15\n\rlong_exchange\x18\x01 \x01(\t\x12\x16\n\x0eshort_exchange\x18\x02 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x03 \x01(\t\x12\r\n\x05quote\x18\x04 \x01(\t\x12\x13\n\x0bprofit_rate\x18\x05 \x01(\x01\x12\x0e\n\x06profit\x18\x06 \x01(\x01\x12\x11\n\ttimestamp\x18\x07 \x01(\x03\x12\x18\n\x10invested_capital\x18\x08 \x01(\x01\"\x9b\x01\n\x0bTradeSchema\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x10\n\x08trade_id\x18\x02 \x01(\t\x12\x10\n\x08\x65xchange\x18\x03 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x04 \x01(\t\x12\r\n\x05quote\x18\x05 \x01(\t\x12\r\n\x05price\x18\x06 \x01(\x01\x12\x0e\n\x06\x61mount\x18\x07 \x01(\x01\x12\x11\n\ttimestamp\x18\x08 \x01(\x03\x12\x0c\n\x04side\x18\t \x01(\t\"\xcb\x01\n\nOrderPanel\x12\x10\n\x08\x65xchange\x18\x01 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x02 \x01(\t\x12\r\n\x05quote\x18\x03 \x01(\t\x12\x33\n\x04side\x18\x04 \x01(\x0e\x32%.sansigmabuffers.OrderPanel.OrderSide\x12\r\n\x05price\x18\x05 \x01(\x01\x12\x14\n\x0c\x64\x65pth_amount\x18\x06 \x01(\x01\x12\x14\n\x0corder_amount\x18\x07 \x01(\x01\"\x1e\n\tOrderSide\x12\x07\n\x03\x42uy\x10\x00\x12\x08\n\x04Sell\x10\x01\"\xfb\x01\n\tArbitrage\x12\x36\n\x04type\x18\x01 \x01(\x0e\x32(.sansigmabuffers.Arbitrage.ArbitrageType\x12+\n\x06orders\x18\x02 \x03(\x0b\x32\x1b.sansigmabuffers.OrderPanel\x12\x0e\n\x06profit\x18\x03 \x01(\x01\x12\x13\n\x0bprofit_rate\x18\x04 \x01(\x01\x12\x12\n\ninvestment\x18\x05 \x01(\x01\x12\x17\n\x0fprofit_currency\x18\x06 \x01(\t\"7\n\rArbitrageType\x12\n\n\x06Simple\x10\x00\x12\x0e\n\nTriangular\x10\x01\x12\n\n\x06\x43ircle\x10\x02\x62\x06proto3')
 )
 
-_ORDERSIDE = _descriptor.EnumDescriptor(
+
+
+_ORDERPANEL_ORDERSIDE = _descriptor.EnumDescriptor(
   name='OrderSide',
-  full_name='sansigmabuffers.OrderSide',
+  full_name='sansigmabuffers.OrderPanel.OrderSide',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -40,15 +41,14 @@ _ORDERSIDE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=954,
-  serialized_end=984,
+  serialized_start=772,
+  serialized_end=802,
 )
-_sym_db.RegisterEnumDescriptor(_ORDERSIDE)
+_sym_db.RegisterEnumDescriptor(_ORDERPANEL_ORDERSIDE)
 
-OrderSide = enum_type_wrapper.EnumTypeWrapper(_ORDERSIDE)
-_ARBITRAGETYPE = _descriptor.EnumDescriptor(
+_ARBITRAGE_ARBITRAGETYPE = _descriptor.EnumDescriptor(
   name='ArbitrageType',
-  full_name='sansigmabuffers.ArbitrageType',
+  full_name='sansigmabuffers.Arbitrage.ArbitrageType',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -67,18 +67,10 @@ _ARBITRAGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=986,
-  serialized_end=1041,
+  serialized_start=1001,
+  serialized_end=1056,
 )
-_sym_db.RegisterEnumDescriptor(_ARBITRAGETYPE)
-
-ArbitrageType = enum_type_wrapper.EnumTypeWrapper(_ARBITRAGETYPE)
-Buy = 0
-Sell = 1
-Simple = 0
-Triangular = 1
-Circle = 2
-
+_sym_db.RegisterEnumDescriptor(_ARBITRAGE_ARBITRAGETYPE)
 
 
 _BIDASKSCHEMA = _descriptor.Descriptor(
@@ -388,7 +380,7 @@ _ORDERPANEL = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='order_side', full_name='sansigmabuffers.OrderPanel.order_side', index=3,
+      name='side', full_name='sansigmabuffers.OrderPanel.side', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -420,6 +412,7 @@ _ORDERPANEL = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _ORDERPANEL_ORDERSIDE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -428,7 +421,7 @@ _ORDERPANEL = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=599,
-  serialized_end=765,
+  serialized_end=802,
 )
 
 
@@ -476,8 +469,8 @@ _ARBITRAGE = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='profit_currency', full_name='sansigmabuffers.Arbitrage.profit_currency', index=5,
-      number=6, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -486,6 +479,7 @@ _ARBITRAGE = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _ARBITRAGE_ARBITRAGETYPE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -493,23 +487,23 @@ _ARBITRAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=768,
-  serialized_end=952,
+  serialized_start=805,
+  serialized_end=1056,
 )
 
 _DEPTHSCHEMA.fields_by_name['bids'].message_type = _BIDASKSCHEMA
 _DEPTHSCHEMA.fields_by_name['asks'].message_type = _BIDASKSCHEMA
-_ORDERPANEL.fields_by_name['order_side'].enum_type = _ORDERSIDE
-_ARBITRAGE.fields_by_name['type'].enum_type = _ARBITRAGETYPE
+_ORDERPANEL.fields_by_name['side'].enum_type = _ORDERPANEL_ORDERSIDE
+_ORDERPANEL_ORDERSIDE.containing_type = _ORDERPANEL
+_ARBITRAGE.fields_by_name['type'].enum_type = _ARBITRAGE_ARBITRAGETYPE
 _ARBITRAGE.fields_by_name['orders'].message_type = _ORDERPANEL
+_ARBITRAGE_ARBITRAGETYPE.containing_type = _ARBITRAGE
 DESCRIPTOR.message_types_by_name['BidAskSchema'] = _BIDASKSCHEMA
 DESCRIPTOR.message_types_by_name['DepthSchema'] = _DEPTHSCHEMA
 DESCRIPTOR.message_types_by_name['SpreadSchema'] = _SPREADSCHEMA
 DESCRIPTOR.message_types_by_name['TradeSchema'] = _TRADESCHEMA
 DESCRIPTOR.message_types_by_name['OrderPanel'] = _ORDERPANEL
 DESCRIPTOR.message_types_by_name['Arbitrage'] = _ARBITRAGE
-DESCRIPTOR.enum_types_by_name['OrderSide'] = _ORDERSIDE
-DESCRIPTOR.enum_types_by_name['ArbitrageType'] = _ARBITRAGETYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 BidAskSchema = _reflection.GeneratedProtocolMessageType('BidAskSchema', (_message.Message,), dict(

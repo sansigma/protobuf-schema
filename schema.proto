@@ -38,32 +38,31 @@ message TradeSchema {
   string side = 9;
 }
 
-enum OrderSide {
-  Buy = 0;
-  Sell = 1;
-}
-
-enum ArbitrageType {
-  Simple = 0;
-  Triangular = 1;
-  Circle = 2;
-}
-
 message OrderPanel {
-    string exchange = 1;
-    string base = 2;
-    string quote = 3;
-    OrderSide order_side = 4;
-    double price = 5;
-    double depth_amount = 6;
-    double order_amount = 7;
+  enum OrderSide {
+    Buy = 0;
+    Sell = 1;
+  }
+
+  string exchange = 1;
+  string base = 2;
+  string quote = 3;
+  OrderSide side = 4;
+  double price = 5;
+  double depth_amount = 6;
+  double order_amount = 7;
 }
 
 message Arbitrage {
+  enum ArbitrageType {
+    Simple = 0;
+    Triangular = 1;
+    Circle = 2;
+  }
   ArbitrageType type = 1;
   repeated OrderPanel orders = 2;
   double profit = 3;
   double profit_rate = 4;
   double investment = 5;
-  double profit_currency = 6;
+  string profit_currency = 6;
 }
