@@ -66,3 +66,13 @@ message Arbitrage {
   double investment = 5;
   string profit_asset = 6;
 }
+
+service VuemexApi {
+    rpc GetOrderBook (AssetPair) returns (DepthSchema) {}
+}
+
+message AssetPair {
+    string base = 1;
+    string quote = 2;
+}
+
