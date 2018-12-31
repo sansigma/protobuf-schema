@@ -68,7 +68,7 @@ message Arbitrage {
 }
 
 service VuemexApi {
-    rpc GetOrderBook (AssetPair) returns (DepthSchema) {}
+    rpc GetOrderBook (AssetPair) returns (stream DepthSchema) {}
 }
 
 message AssetPair {
