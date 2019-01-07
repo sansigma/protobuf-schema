@@ -68,11 +68,25 @@ message Arbitrage {
 }
 
 service VuemexApi {
-    rpc GetOrderBook (AssetPair) returns (stream DepthSchema) {}
+  rpc GetOrderBook (AssetPair) returns (stream DepthSchema) {}
 }
 
 message AssetPair {
-    string base = 1;
-    string quote = 2;
+  string base = 1;
+  string quote = 2;
 }
 
+message OrderBooks {
+  repeated DepthSchema all = 1;
+  int64 timestamp = 2;
+}
+
+message OrderBooksRequest {
+  string base = 1;
+  string quote = 2;
+  repeated string exclude_exchange = 3;
+}
+
+service OrderBooksApi {
+  rpc GetOrderBooks (OrderBooksRequest) returns (stream OrderBooks) {}
+}
